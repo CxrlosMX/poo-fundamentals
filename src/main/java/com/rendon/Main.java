@@ -11,10 +11,16 @@
 
     public static void main(String[] args) {
 
-       final var gauntletService = new GauntletServiceImpl();
+        //instance 01
+        final var mind = new MindStone();
 
+        System.out.println(mind);
+        System.out.println(System.identityHashCode(mind));
 
+        //instance 02
+        final var mindPrototype= mind.getPrototype();
+        System.out.println(mindPrototype);
 
-       gauntletService.useGauntlet("");
+        System.out.println(System.identityHashCode(mindPrototype));
     }
 }

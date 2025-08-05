@@ -2,6 +2,8 @@ package com.rendon.models;
 
 import lombok.*;
 
+import java.io.Serializable;
+
 /*
 * @Getter: Lombok genera los métodos getters
 * @Setter: Lombok genera los métodos setters
@@ -15,7 +17,7 @@ import lombok.*;
 //@NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public abstract class Stone {
+public abstract class Stone implements Serializable {
 
     protected String name;
 
