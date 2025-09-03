@@ -16,7 +16,7 @@ import java.io.Serializable;
 /*@AllArgsConstructor*/
 //@NoArgsConstructor
 @EqualsAndHashCode
-@ToString
+@ToString(callSuper = true)
 public abstract class Stone implements Serializable {
 
     protected String name;

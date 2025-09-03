@@ -9,10 +9,33 @@ import lombok.extern.java.Log;
 public class GauntletServiceImpl implements GauntletService {
 
 
-    private final Stone soulStone=new SoulStone();
+    private Stone reality;
+
+    public GauntletServiceImpl() {
+    }
 
     @Override
     public void useGauntlet(String stoneName) {
-    log.info("Using the stone " + soulStone);
+        /**
+         * Usamos un swith case con lamda
+         *
+         */
+        switch (stoneName){
+            case "reality" -> log.info("Use stone "+reality);
+            default -> throw new IllegalArgumentException("Invalid stone name");
+        }
+
+    }
+
+    @Override
+    public void useFullPower() {
+
+    }
+
+    /**
+     * Inyección de dependencias via setter
+     */
+    public void setSoulStone(Stone reality) {
+        this.reality = reality;
     }
 }
